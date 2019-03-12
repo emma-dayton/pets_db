@@ -22,14 +22,6 @@ def safe_add_pet():
     db.query_db(safe_query, data)
     return redirect('/')
 
-@app.route('/dangerous_add_pet', methods=['POST'])
-def dangerous_add_pet():
-    db = connectToMySQL('pets_db')
-    db.query_db(
-    f'''INSERT INTO pets (name, species, created_at, updated_at)
-    VALUES({request.form['name']}, {request.form['species']}, now(), now())'''
-    )
-    return redirect('/')
 
 
 if __name__ == "__main__":
