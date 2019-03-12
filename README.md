@@ -6,3 +6,4 @@ Skills used:
 * HTML
 * CSS (Bootstrap)
 * MySQL
+* Demonstration of knowledge of SQL injection
