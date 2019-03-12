@@ -26,10 +26,15 @@
           </tr>
           {% endfor %}
         </table>
-        <form class="" action="/add_pet" method="post">
+        <form class="" action="/safe_add_pet" method="post">
           <p>Name: <input type="text" name="name"></p>
           <p>Species: <input type="text" name="species"></p>
-        <input type="submit" value="Add Pet">
+        <input type="submit" value="Safe Add Pet">
+        </form>
+        <form class="" action="/dangerous_add_pet" method="post">
+          <p>Name: <input type="text" name="name"></p>
+          <p>Species: <input type="text" name="species"></p>
+        <input type="submit" value="Dangerous Add Pet">
         </form>
       </div>
     </div>

@@ -10,10 +10,16 @@ def index():
     return render_template("index.html", pets=pets)
 
 
-@app.route('/add_pet', methods=['POST'])
+@app.route('/safe_add_pet', methods=['POST'])
 def add_pet():
     db = connectToMySQL('pets_db')
-
+    data = {
+    'name': request.form['name'],
+    'species': request.form['species']
+    }
+    print(data)
+    safe_query = 'INSERT INTO pets (name, species, created_at, updated_at) VALUES(%(name)s, %(species)s, now(), now())'
+    db.query_db(safe_query, data)
     return redirect('/')
 
 
