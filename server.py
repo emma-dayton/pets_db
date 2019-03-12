@@ -4,12 +4,16 @@ app = Flask(__name__)
 # our index route will handle rendering our form
 @app.route('/')
 def index():
-    return render_template("index.html")
+    db = connectToMySQL('pets_db')
+    pets = db.query_db("SELECT * FROM pets;")
+    print(pets)
+    return render_template("index.html", pets=pets)
 
 
 @app.route('/add_pet', methods=['POST'])
 def add_pet():
-    # submit info and SQL query go here
+    db = connectToMySQL('pets_db')
+
     return redirect('/')
 
 
