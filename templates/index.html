@@ -26,16 +26,24 @@
           </tr>
           {% endfor %}
         </table>
-        <form class="" action="/safe_add_pet" method="post">
-          <p>Name: <input type="text" name="name"></p>
-          <p>Species: <input type="text" name="species"></p>
-        <input type="submit" value="Safe Add Pet">
-        </form>
-        <form class="" action="/dangerous_add_pet" method="post">
-          <p>Name: <input type="text" name="name"></p>
-          <p>Species: <input type="text" name="species"></p>
-        <input type="submit" value="Dangerous Add Pet">
-        </form>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <form class="" action="/safe_add_pet" method="post">
+                <p>Name: <input type="text" name="name"></p>
+                <p>Species: <input type="text" name="species"></p>
+              <input type="submit" value="Safe Add Pet">
+              </form>
+            </div>
+            <div class="col-sm">
+              <form class="" action="/dangerous_add_pet" method="post">
+                <p>Name: <input type="text" name="name"></p>
+                <p>Species: <input type="text" name="species"></p>
+              <input type="submit" value="Dangerous Add Pet">
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
